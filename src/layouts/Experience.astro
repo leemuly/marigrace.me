@@ -1,0 +1,35 @@
+---
+const { company, location } = Astro.props;
+---
+<html lang="en">
+	<head>
+		<style>
+            article {
+                display: flex;
+                flex-direction: column;
+                padding: 0 20em 0 20em;
+            }
+			.job-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+			}
+            .job-description {
+                padding: 0 2em 0 2em;
+			}
+		</style>
+	</head>
+    <article>
+        <div class="job-header">
+            <h3>
+                {company}
+            </h3>
+            <p>
+                {location}
+            </p>
+        </div>
+        <div class="job-description">
+          <slot />
+        </div>
+    </article>
+</html>
