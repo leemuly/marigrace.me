@@ -1,0 +1,80 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import SiteBasic from '../layouts/SiteBasic.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+---
+<SiteBasic
+    classes="min-w-screen flex flex-col pt-4 md:pl-24 items-end"
+>
+    <ExperienceCard
+        title={SITE_TITLE}
+        description={SITE_DESCRIPTION}
+        company="Etsy"
+        location="Brooklyn, NY"
+    >
+        <h4 class="text-lg">
+            Senior Software Engineer
+        </h4>
+        <p>
+            2024 - 2025
+        </p>
+        <ul class="list-disc pl-6">
+            <li>
+                Created SpeedCurve and Honeycomb dashboards, centralized Grafana dashboards to monitor 
+                homepage web performance metrics and track possible degradation over time
+            </li>
+            <li>
+                Advocated for consolidated, up-to-date documentation of team processes and features built
+                using PHP, Typescript, and SASS
+            </li>
+            <li>
+                Collaborated with performance and Contentful experts to engineer a homepage hero image
+                carousel, using monitoring and research to mitigate impacts of loading an asset-heavy module
+            </li>
+        </ul>
+        <h4 class="mt-6 text-lg">
+            Software Engineer
+        </h4>
+        <p>
+            2022 - 2024
+        </p>
+        <ul class="list-disc pl-6">
+            <li>
+                Led team of 7 engineers in developing an experimental design overhaul on category pages by
+                breaking down feature into smaller, parallelizable tracks of work and facilitated collaboration
+                between product, engineering, design and merchandizing to launch feature in 2 months
+            </li>
+            <li>
+                Empowered other developers by identifying process improvements, mentoring peers and
+                juniors on frontend development, and facilitating a weekly engineering meeting to discuss
+                technical topics
+            </li>
+        </ul>
+    </ExperienceCard>
+    <ExperienceCard
+        title={SITE_TITLE}
+        description={SITE_DESCRIPTION}
+        company="Goldman Sachs"
+        location="Jersey City, NJ"
+    >
+        <h4 class="text-lg">
+            Front End Developer, Engineering Analyst
+        </h4>
+        <p>
+            2020 - 2022
+        </p>
+        <ul class="list-disc pl-6">
+            <li>
+                Worked with a global team of 35 to modernize internal tools supporting 6,800 users yearly
+            </li>
+            <li>
+                Gathered requirements by working closely with users to rebuild UI for legacy features such as
+                advanced search, historical data filtering, and task tracking
+            </li>
+            <li>
+                Refactored features using React and Redux, standardized team-wide styling system using BEM
+                methodology, pioneered efforts to transition from SASS to CSS-in-JS
+            </li>
+        </ul>
+    </ExperienceCard>
+</SiteBasic>

@@ -1,125 +1,19 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
+import SiteBasic from '../layouts/SiteBasic.astro';
 import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import AboutHeroImage from '../assets/marigrace-landscape.jpg';
-import Layout from '../layouts/AboutMe.astro';
-import ExperienceLayout from '../layouts/Experience.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-				padding: 2em 1em 0 1em;
-				display: flex;
-			}
-			h4 {
-				font-weight: 400;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<Layout
-				title="About Me"
-				description="Information about Marigrace's background"
-				pubDate={new Date('November 2025')}
-				heroImage={AboutHeroImage}
-			>
-				<p>
-					I'm a software engineer with 5 years of experience based in central/south Florida. 
-					I graduated from the University of Florida in December of 2018 with two degrees, a B.A. in Environmental Science and a B.A. in East Asian Languages, Literature, and Culture - Chinese Studies.
-					Having a long term interest in frontend development through customisable personal sites like Xanga and Tumblr, I decided to enroll in a coding bootcamp - The Grace Hopper Program at Fullstack Academy.
-					After completing the program, I was a teaching fellow for the following cohort before starting my career in the industry in early 2020.
-				</p>
-				<p>
-					As a fullstack engineer with a frontend focus, I enjoy building out experiences that are both beautiful and intuitive while still being accessible. 
-					Behind the scenes, writing code that is clean, readable and well-documented is important to me. 
-					In my career, I hope to build things that help people connect with the world through creativity, language and knowledge-sharing. 
-				</p>
-			</Layout>
-			<div>
-				<ExperienceLayout
-					title={SITE_TITLE}
-					description={SITE_DESCRIPTION}
-					company="Etsy"
-					location="Brooklyn, NY"
-				>
-					<h4>
-						Senior Software Engineer
-					</h4>
-					<p>
-						March 2024 - February 2025
-					</p>
-					<ul>
-						<li>
-							Created SpeedCurve and Honeycomb dashboards, centralized Grafana dashboards to monitor 
-							homepage web performance metrics and track possible degradation over time
-						</li>
-						<li>
-							Advocated for consolidated, up-to-date documentation of team processes and features built
-							using PHP, Typescript, and SASS
-						</li>
-						<li>
-							Collaborated with performance and Contentful experts to engineer a homepage hero image
-							carousel, using monitoring and research to mitigate impacts of loading an asset-heavy module
-						</li>
-					</ul>
-					<h4>
-						Software Engineer
-					</h4>
-					<p>
-						March 2022 - February 2024
-					</p>
-					<ul>
-						<li>
-							Led team of 7 engineers in developing an experimental design overhaul on category pages by
-							breaking down feature into smaller, parallelizable tracks of work and facilitated collaboration
-							between product, engineering, design and merchandizing to launch feature in 2 months
-						</li>
-						<li>
-							Empowered other developers by identifying process improvements, mentoring peers and
-							juniors on frontend development, and facilitating a weekly engineering meeting to discuss
-							technical topics
-						</li>
-					</ul>
-				</ExperienceLayout>
-				<ExperienceLayout
-					title={SITE_TITLE}
-					description={SITE_DESCRIPTION}
-					company="Goldman Sachs"
-					location="Jersey City, NJ"
-				>
-					<h4>
-						Front End Developer, Engineering Analyst
-					</h4>
-					<p>
-						March 2020 - February 2022
-					</p>
-					<ul>
-						<li>
-							Worked with a global team of 35 to modernize internal tools supporting 6,800 users yearly
-						</li>
-						<li>
-							Gathered requirements by working closely with users to rebuild UI for legacy features such as
-							advanced search, historical data filtering, and task tracking
-						</li>
-						<li>
-							Refactored features using React and Redux, standardized team-wide styling system using BEM
-							methodology, pioneered efforts to transition from SASS to CSS-in-JS
-						</li>
-					</ul>
-				</ExperienceLayout>
-			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
+<SiteBasic classes="min-w-screen flex flex-col justify-center items-end">
+	<div class="bg-white/75 rounded-lg shadow-md p-6 m-2">
+		<h1 class="mb-4">Marigrace Leeman</h1>
+		<p>
+			Frontend-focused full-stack <span class="underline decoration-double decoration-indigo-500">software engineer</span> with experience building responsive, performant web applications.
+		</p>
+		<p>
+			In my free time, I enjoy journaling, language learning, and playing video games!
+		</p>
+	</div>
+	<div class="flex items-center bg-white/75 rounded-lg shadow-md p-6 m-2">
+		Contact me on <a href="https://www.linkedin.com/in/leemanm/" target="_blank" class="pl-1 text-indigo-500 decoration-indigo-600 underline">LinkedIn</a>
+	</div>
+	<Footer />
+</SiteBasic>

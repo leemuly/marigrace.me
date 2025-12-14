@@ -1,0 +1,16 @@
+---
+const { company, location, classes } = Astro.props;
+---
+<article class=`flex flex-col bg-white/75 rounded-lg shadow-md p-6 mb-6 mx-6 md:mx-0 md:w-4/5 ${classes}` >
+    <div class="job-header">
+        <h3 class="m-0 text-3xl">
+            {company}
+        </h3>
+        <p>
+            {location}
+        </p>
+    </div>
+    <div class="px-2 text-sm">
+        <slot />
+    </div>
+</article>

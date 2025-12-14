@@ -1,0 +1,33 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Nav from '../components/Nav.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+const { classes } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+			}
+			.grid {
+				position: absolute;
+				inset: 0;
+				height: 100%;
+				width: 100%;
+				background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
+					linear-gradient(to bottom, #80808012 1px, transparent 1px);
+				background-size: 24px 24px;
+			}
+		</style>
+	</head>
+	<body class="min-h-screen min-w-screen bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] flex flex-col md:flex-row-reverse">
+		<Nav />
+		<main class=`flex min-h-full ${classes}`>
+            <slot />
+		</main>
+	</body>
+</html>
