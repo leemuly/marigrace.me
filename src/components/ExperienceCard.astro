@@ -1,7 +1,7 @@
 ---
 const { company, location, classes } = Astro.props;
 ---
-<article class=`flex flex-col bg-white/75 rounded-lg shadow-md p-6 mb-6 mx-6 md:mx-0 md:w-4/5 ${classes}` >
+<div class=`flex flex-col bg-white/75 ${classes} px-4 md:px-16`>
     <div class="job-header">
         <h3 class="m-0 text-3xl">
             {company}
@@ -10,7 +10,7 @@ const { company, location, classes } = Astro.props;
             {location}
         </p>
     </div>
-    <div class="px-2 text-sm">
+    <div class="px-2 md:text-sm">
         <slot />
     </div>
-</article>
+</div>

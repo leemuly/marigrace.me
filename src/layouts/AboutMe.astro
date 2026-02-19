@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-const { heroImage } = Astro.props;
+const { heroImage, classes } = Astro.props;
 ---
 
 <html lang="en">
@@ -15,11 +15,11 @@ const { heroImage } = Astro.props;
 			}
 		</style>
 	</head>
-	<article class="w-full flex flex-col items-center md:items-end my-4 md:mt-24">
+	<article class=`bg-white/75 flex flex-col items-center md:flex-row mb-4 ${classes}`>
 		{heroImage && 
 			<Image class="h-[250px] w-[400px] object-cover" src={heroImage} alt="" />
 		}
-		<div class="bg-white/75 rounded-lg shadow-md md:text-right mt-2 p-6 md:w-3/4">
+		<div class="p-6 text-center">
 			<slot />
 		</div>
 	</article>

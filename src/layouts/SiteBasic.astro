@@ -10,7 +10,7 @@ const { classes } = Astro.props;
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: calc(100% - 2em);
+				width: 100%;
 				max-width: 100%;
 			}
 			.grid {
@@ -24,7 +24,7 @@ const { classes } = Astro.props;
 			}
 		</style>
 	</head>
-	<body class="min-h-screen min-w-screen bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] flex flex-col md:flex-row-reverse">
+	<body class="min-h-screen min-w-screen bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] flex flex-col">
 		<Nav />
 		<main class=`flex min-h-full ${classes}`>
             <slot />

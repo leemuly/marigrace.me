@@ -1,19 +1,115 @@
 ---
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import SiteBasic from '../layouts/SiteBasic.astro';
+import AboutMeLayout from '../layouts/AboutMe.astro';
+import AboutHeroImage from '../assets/marigrace-landscape.jpg';
+import ExperienceCard from '../components/ExperienceCard.astro';
 import Footer from '../components/Footer.astro';
 ---
-<SiteBasic classes="min-w-screen flex flex-col justify-center items-end">
-	<div class="bg-white/75 rounded-lg shadow-md p-6 m-2">
-		<h1 class="mb-4">Marigrace Leeman</h1>
+<SiteBasic classes="flex flex-col justify-center md:px-12">
+	<div class="bg-white/75 p-6 w-full text-center mb-4 md:py-24">
+		<h1 class="py-6 text-4xl md:text-6xl">Marigrace Leeman</h1>
 		<p>
-			Frontend-focused full-stack <span class="underline decoration-double decoration-indigo-500">software engineer</span> with experience building responsive, performant web applications.
+			Frontend-focused full-stack <span class="underline decoration-double decoration-amber-500">software engineer</span> with experience building responsive, performant web applications.
 		</p>
 		<p>
 			In my free time, I enjoy journaling, language learning, and playing video games!
 		</p>
 	</div>
-	<div class="flex items-center bg-white/75 rounded-lg shadow-md p-6 m-2">
-		Contact me on <a href="https://www.linkedin.com/in/leemanm/" target="_blank" class="pl-1 text-indigo-500 decoration-indigo-600 underline">LinkedIn</a>
-	</div>
+	<AboutMeLayout
+        title="About Me"
+        description="Information about Marigrace's background"
+        pubDate={new Date('November 2025')}
+        heroImage={AboutHeroImage}
+		classes="md:py-12"
+    >
+        <p>
+            I'm a software engineer with 5 years of experience based in central/south Florida. 
+            I graduated from the University of Florida in December of 2018 with two degrees, a B.A. in Environmental Science and a B.A. in East Asian Languages, Literature, and Culture - Chinese Studies.
+            Having a long term interest in frontend development through customisable personal sites like Xanga and Tumblr, I decided to enroll in a coding bootcamp - The Grace Hopper Program at Fullstack Academy.
+            After completing the program, I was a teaching fellow for the following cohort before starting my career in the industry in early 2020.
+        </p>
+        <p>
+            As a fullstack engineer with a frontend focus, I enjoy building out experiences that are both beautiful and intuitive while still being accessible. 
+            Behind the scenes, writing code that is clean, readable and well-documented is important to me. 
+            In my career, I hope to build things that help people connect with the world through creativity, language and knowledge-sharing. 
+        </p>
+    </AboutMeLayout>
+	<article>
+		<h2 class="bg-white/75 w-full py-6 text-3xl text-center md:text-left md:text-4xl">Experience</h2>
+		<ExperienceCard
+			title={SITE_TITLE}
+			description={SITE_DESCRIPTION}
+			company="Etsy"
+			location="Brooklyn, NY"
+			classes="pb-8"
+		>
+			<h4 class="text-xl md:text-lg">
+				Senior Software Engineer
+			</h4>
+			<p>
+				2024 - 2025
+			</p>
+			<ul class="list-disc pl-6 mb-6">
+				<li>
+					Created SpeedCurve and Honeycomb dashboards, centralized Grafana dashboards to monitor 
+					homepage web performance metrics and track possible degradation over time
+				</li>
+				<li>
+					Advocated for consolidated, up-to-date documentation of team processes and features built
+					using PHP, Typescript, and SASS
+				</li>
+				<li>
+					Collaborated with performance and Contentful experts to engineer a homepage hero image
+					carousel, using monitoring and research to mitigate impacts of loading an asset-heavy module
+				</li>
+			</ul>
+			<h4 class="text-xl md:text-lg">
+				Software Engineer
+			</h4>
+			<p>
+				2022 - 2024
+			</p>
+			<ul class="list-disc pl-6">
+				<li>
+					Led team of 7 engineers in developing an experimental design overhaul on category pages by
+					breaking down feature into smaller, parallelizable tracks of work and facilitated collaboration
+					between product, engineering, design and merchandizing to launch feature in 2 months
+				</li>
+				<li>
+					Empowered other developers by identifying process improvements, mentoring peers and
+					juniors on frontend development, and facilitating a weekly engineering meeting to discuss
+					technical topics
+				</li>
+			</ul>
+		</ExperienceCard>
+		<ExperienceCard
+			title={SITE_TITLE}
+			description={SITE_DESCRIPTION}
+			company="Goldman Sachs"
+			location="Jersey City, NJ"
+			classes="pb-12"
+		>
+			<h4 class="text-xl md:text-lg">
+				Front End Developer, Engineering Analyst
+			</h4>
+			<p>
+				2020 - 2022
+			</p>
+			<ul class="list-disc pl-6">
+				<li>
+					Worked with a global team of 35 to modernize internal tools supporting 6,800 users yearly
+				</li>
+				<li>
+					Gathered requirements by working closely with users to rebuild UI for legacy features such as
+					advanced search, historical data filtering, and task tracking
+				</li>
+				<li>
+					Refactored features using React and Redux, standardized team-wide styling system using BEM
+					methodology, pioneered efforts to transition from SASS to CSS-in-JS
+				</li>
+			</ul>
+		</ExperienceCard>
+	</article>
 	<Footer />
 </SiteBasic>
